@@ -51,8 +51,8 @@ def get_picture_by_id(id):
     if data:
         for pic in data:
             if pic['id'] == id:
-                return jsonify(pic), 200
-        return {"message": f"Picture with id: {id} not found"}, 204
+                return pic, 200
+        return {"message": "Picture not found"}, 404
     return {"message": "Internal server error"}, 500
 
 
